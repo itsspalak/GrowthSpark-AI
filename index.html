@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0f12">
+<title>GrowthSpark AI — Campaign Lab</title>
+<style>
+:root{--bg:#f4f6f2;--ink:#15221d;--muted:#64716a;--line:#dfe6df;--white:#fff;--green:#c9fa66;--deep:#14261d;--purple:#d9d1ff;--orange:#ffb58b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}button,input,select,textarea{font:inherit}
+header{background:var(--deep);color:white;padding:18px max(20px,calc((100vw - 1150px)/2));display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{font-size:20px;font-weight:900;letter-spacing:-.6px}.brand b{color:var(--green)}.header-tag{font-size:11px;letter-spacing:1px;color:#d4e3d8;border:1px solid #526358;padding:6px 9px;border-radius:99px}
+main{max-width:1150px;margin:30px auto;padding:0 20px}.hero{background:var(--deep);color:white;border-radius:24px;padding:clamp(24px,5vw,48px);display:grid;grid-template-columns:1.35fr .65fr;gap:25px;align-items:center;overflow:hidden;position:relative}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;font-weight:850;color:var(--green)}h1{font-size:clamp(32px,5vw,52px);line-height:1.02;letter-spacing:-2px;margin:13px 0 14px;max-width:700px}.hero p{color:#c6d2ca;max-width:620px;margin:0 0 20px}.hero .lime{color:var(--green)}.hero-visual{min-height:205px;display:grid;place-items:center;position:relative}.orbit{width:205px;height:205px;border:1px solid #5c7063;border-radius:50%;display:grid;place-items:center;position:relative}.orb-core{width:112px;height:112px;border-radius:32px;background:var(--green);color:var(--deep);font-size:46px;display:grid;place-items:center;transform:rotate(-8deg);box-shadow:0 15px 45px #c9fa6630}.bubble{position:absolute;border-radius:14px;padding:9px 12px;background:#fff;color:var(--deep);font-size:12px;font-weight:800;box-shadow:0 8px 25px #0002}.b1{top:16px;right:-4px}.b2{bottom:19px;left:-10px;background:var(--purple)}.b3{top:49%;left:-25px;background:var(--orange)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:26px 0 13px}.section-head h2{font-size:21px;letter-spacing:-.6px;margin:0}.section-head p{font-size:12px;color:var(--muted);margin:0}
+.layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:17px}.card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:21px;min-width:0}.card h3{font-size:16px;margin:0 0 4px}.desc{font-size:12px;color:var(--muted);margin:0 0 17px}.field{margin-bottom:13px}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;border:1px solid #d6ded6;border-radius:10px;padding:10px 11px;background:#fff;outline:none;color:var(--ink)}.field textarea{min-height:70px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:#7aa23c;box-shadow:0 0 0 3px #c9fa6638}.two{display:grid;grid-template-columns:1fr 1fr;gap:11px}.btn{border:0;border-radius:10px;padding:11px 14px;font-weight:850;cursor:pointer}.btn-main{background:var(--green);color:var(--deep);width:100%}.btn-dark{background:var(--deep);color:white}.btn-light{background:#edf2e9;color:var(--deep)}.muted{font-size:11px;color:var(--muted)}
+.output{border:1px solid #dce5d9;border-radius:14px;padding:16px;background:linear-gradient(135deg,#fbfdf8,#f2f7ef);min-height:280px}.ready{font-size:11px;display:inline-block;padding:5px 8px;border-radius:99px;background:#e3f7cb;color:#31550b;font-weight:900}.output h4{margin:12px 0 5px;font-size:20px;letter-spacing:-.5px}.output p{margin:0 0 12px;color:#4c5b50;font-size:13px}.chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.chip{font-size:11px;font-weight:800;padding:5px 8px;border:1px solid #dce5d9;border-radius:99px;background:white}.output-block{border-top:1px solid #dce5d9;padding-top:12px;margin-top:12px}.output-block strong{display:block;font-size:12px;margin-bottom:5px}.output-block ul{padding-left:18px;margin:5px 0;font-size:13px}.output-block li{margin:4px 0}.idea{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px;margin-top:10px}.idea-top{display:flex;justify-content:space-between;gap:10px;font-size:12px;font-weight:900}.idea p{font-size:12px;margin:6px 0 0}.score{font-size:11px;font-weight:900;color:#426719;background:#e6f6d5;border-radius:99px;padding:4px 7px;white-space:nowrap}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.bottom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:17px}.mini-card{padding:16px;border:1px solid var(--line);border-radius:15px;background:white}.mini-card .icon{font-size:23px}.mini-card strong{display:block;font-size:13px;margin:7px 0 3px}.mini-card p{font-size:12px;color:var(--muted);margin:0}.notice{margin-top:14px;padding:12px;border-radius:11px;background:#fff5df;border:1px solid #f0dfb7;color:#765000;font-size:11px}footer{max-width:1150px;padding:0 20px;margin:22px auto 35px;color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.toast{display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#14261d;color:#fff;padding:10px 15px;border-radius:10px;z-index:5}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.hero-visual{display:none}.layout{grid-template-columns:1fr}.bottom-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){header{padding:15px}.header-tag{font-size:9px}main{padding:0 12px;margin:16px auto}.hero{padding:25px 20px;border-radius:18px}h1{font-size:36px;letter-spacing:-1.3px}.card{padding:15px}.two{grid-template-columns:1fr;gap:0}.bottom-grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}}
+
+/* Dark theme overrides */
+:root{
+  color-scheme:dark;
+  --bg:#0b0f12;
+  --ink:#edf4ee;
+  --muted:#9aa9a0;
+  --line:#29352e;
+  --white:#121a16;
+  --green:#c9fa66;
+  --deep:#080d0a;
+  --purple:#b9aaff;
+  --orange:#ffb58b;
+}
+body{background:var(--bg);color:var(--ink)}
+header{background:#080d0a;border-bottom:1px solid #26332b}
+.header-tag{color:#c7d5cb;border-color:#435348}
+.hero{background:radial-gradient(ellipse at 82% 20%,#203b2a 0%,#101d15 42%,#080d0a 100%);border:1px solid #2a3b2f}
+.hero p{color:#b9c8be}
+.orbit{border-color:#3e5947}
+.bubble{background:#e8eee9;color:#122017}
+.b2{background:#b9aaff;color:#171126}
+.b3{background:#ffb58b;color:#2c170c}
+.section-head p,.desc,.muted,.mini-card p,footer{color:var(--muted)}
+.card,.mini-card{background:#121a16;border-color:#29382f;box-shadow:0 12px 35px #00000020}
+.field input,.field select,.field textarea{
+  background:#0b120e;color:#edf4ee;border-color:#34453a;
+}
+.field input::placeholder,.field textarea::placeholder{color:#7f9185}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#a4d34e;box-shadow:0 0 0 3px #c9fa6620}
+.btn-dark{background:#e8f5dd;color:#132017}
+.btn-light{background:#243429;color:#dff4d0;border:1px solid #354a3a}
+.output{
+  background:linear-gradient(135deg,#17231a,#111a14);
+  border-color:#334636;color:#edf4ee;
+}
+.output p{color:#c0cec4}
+.output-block{border-top-color:#2b3b30}
+.chip,.idea{background:#0d1510;border-color:#304034;color:#e6eee7}
+.score{background:#29431e;color:#d5ff9c}
+.ready{background:#304c20;color:#d7ff9b}
+.notice{background:#2a2313;border-color:#65502a;color:#f3d89b}
+.toast{background:#e8f5dd;color:#122017}
+@media(prefers-color-scheme:light){
+  /* Keep this app dark regardless of the device's theme preference. */
+  :root{color-scheme:dark}
+}
+
+</style>
+</head>
+<body>
+<header><div class="brand">GrowthSpark <b>✳</b> AI</div><div class="header-tag">CAMPAIGN LAB · INTERACTIVE DEMO</div></header>
+<main>
+<section class="hero">
+ <div><div class="eyebrow">From idea to experiment</div><h1>Make your next growth idea <span class="lime">worth testing.</span></h1><p>A campaign planning workspace that turns a product, audience, and goal into messaging angles, quick experiments, and measurable next steps.</p><button class="btn btn-main" onclick="document.getElementById('product').focus()">Build a campaign ↘</button></div>
+ <div class="hero-visual"><div class="orbit"><div class="orb-core">✳</div><div class="bubble b1">⚡ 3 test ideas</div><div class="bubble b2">↗ Growth loop</div><div class="bubble b3">◎ Audience fit</div></div></div>
+</section>
+<div class="section-head"><h2>Campaign generator</h2><p>Change the inputs to explore different growth approaches.</p></div>
+<section class="layout">
+ <div class="card">
+  <h3>01 / Set your context</h3><p class="desc">Give the campaign a clear job to do.</p>
+  <form id="form">
+   <div class="field"><label for="product">Product or feature</label><input id="product" value="AI meeting notes app" placeholder="What are you growing?"></div>
+   <div class="field"><label for="audience">Target audience</label><input id="audience" value="Busy startup founders" placeholder="Who is it for?"></div>
+   <div class="two">
+    <div class="field"><label for="goal">Primary goal</label><select id="goal"><option value="activation">Increase activation</option><option value="signups">Get more sign-ups</option><option value="retention">Improve retention</option><option value="referrals">Drive referrals</option></select></div>
+    <div class="field"><label for="channel">Main channel</label><select id="channel"><option value="social">LinkedIn / social</option><option value="email">Email</option><option value="community">Community</option><option value="seo">SEO / content</option></select></div>
+   </div>
+   <div class="two">
+    <div class="field"><label for="budget">Budget</label><select id="budget"><option value="zero">₹0 — organic</option><option value="small">Under ₹5,000</option><option value="medium">₹5,000–₹25,000</option></select></div>
+    <div class="field"><label for="time">Test length</label><select id="time"><option value="7">7 days</option><option value="14">14 days</option><option value="30">30 days</option></select></div>
+   </div>
+   <div class="field"><label for="insight">Customer insight (optional)</label><textarea id="insight" placeholder="e.g. People forget to review their meeting notes"></textarea></div>
+   <button class="btn btn-main" type="submit">✳ Generate growth plan</button>
+   <p class="muted">This demo runs locally in your browser. No business data is uploaded.</p>
+  </form>
+ </div>
+ <div class="card">
+  <h3>02 / Your growth blueprint</h3><p class="desc">A starting point for a small, measurable experiment.</p>
+  <div id="result" class="output"><span class="ready">READY WHEN YOU ARE</span><h4>Your next experiment starts here.</h4><p>Enter your product and audience, then generate a plan to see campaign angles, test ideas, and metrics.</p><div class="chips"><span class="chip">Audience-led</span><span class="chip">Low-cost testing</span><span class="chip">Measurable</span></div></div>
+  <div class="notice"><strong>Honest prototype note:</strong> This version uses transparent templates and rules, not a live AI model. Treat outputs as hypotheses, validate them with real users, and do not present projected outcomes as actual results.</div>
+ </div>
+</section>
+<section class="bottom-grid">
+ <div class="mini-card"><span class="icon">🎯</span><strong>Goal-first planning</strong><p>Choose one outcome so the campaign stays focused.</p></div>
+ <div class="mini-card"><span class="icon">🧪</span><strong>Experiment mindset</strong><p>Test one variable at a time instead of guessing.</p></div>
+ <div class="mini-card"><span class="icon">📈</span><strong>Measure what matters</strong><p>Connect activity to activation, retention, or referrals.</p></div>
+</section>
+</main>
+<footer><span>GrowthSpark AI · Creative growth-planning prototype</span><span>Demo only · No live AI or analytics integration</span></footer><div class="toast" id="toast"></div>
+<script>
+const $=id=>document.getElementById(id);
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function showToast(s){const t=$('toast');t.textContent=s;t.style.display='block';setTimeout(()=>t.style.display='none',2200)}
+function build(e){if(e)e.preventDefault();
+const product=$('product').value.trim()||'your product',aud=$('audience').value.trim()||'your target audience',goal=$('goal').value,ch=$('channel').value,budget=$('budget').value,days=$('time').value,insight=$('insight').value.trim();
+const goalData={
+ activation:{label:'Increase activation',metric:'First key action completed',kpi:'Activation rate',hook:'Get to your first useful result in 5 minutes.',test:'Offer a guided “first win” checklist after sign-up.',variant:'Compare a checklist-led welcome with a blank-start experience.'},
+ signups:{label:'Get more sign-ups',metric:'Qualified sign-up rate',kpi:'Landing-page conversion',hook:'Make the value clear before asking for commitment.',test:'Publish a one-minute use-case demo with a single call to action.',variant:'Test a benefit-led headline against a pain-point headline.'},
+ retention:{label:'Improve retention',metric:'Week-2 returning users',kpi:'Week-2 retention',hook:'Build a repeatable habit around one valuable moment.',test:'Send a useful reminder tied to the moment users usually need the product.',variant:'Compare a value reminder with a feature announcement.'},
+ referrals:{label:'Drive referrals',metric:'Invited users who activate',kpi:'Referral activation rate',hook:'Give happy users a natural reason to share.',test:'Ask users to invite one teammate immediately after a successful outcome.',variant:'Test a team-benefit message against a reward-led message.'}
+}[goal];
+const channels={
+ social:{name:'LinkedIn / social',one:'Publish a short problem → solution story with a clear CTA.',two:'Share a founder-style post showing one real workflow before and after.',three:'Turn one customer question into a carousel or short video.'},
+ email:{name:'Email',one:'Send a concise, benefit-led email with one CTA.',two:'Segment by user intent and personalise the first sentence.',three:'Follow up with a practical tip rather than another sales pitch.'},
+ community:{name:'Community',one:'Ask a specific question in a relevant community before sharing the solution.',two:'Offer a small template or checklist people can use immediately.',three:'Invite a handful of target users to a feedback session.'},
+ seo:{name:'SEO / content',one:'Create a focused how-to page for a high-intent problem.',two:'Publish a comparison or checklist that helps users make a decision.',three:'Answer a specific long-tail question with examples and a clear next step.'}
+}[ch];
+const budgetText=budget==='zero'?'Use organic distribution and manual outreach.':budget==='small'?'Spend only after early organic signals; cap the first paid test.':'Split the test budget across two small creative variants; keep a control.';
+const insightText=insight?`Use this customer insight as the starting hypothesis: “${insight}”.`:'First validate the customer pain with 3–5 short conversations.';
+const title=`${goalData.label}: ${product}`;
+const experiments=[
+ {n:'01',name:'Message test',score:'Fastest to launch',desc:channels.one},
+ {n:'02',name:'Format test',score:'Learn what resonates',desc:channels.two},
+ {n:'03',name:'Feedback loop',score:'Find objections',desc:channels.three}
+];
+$('result').innerHTML=`<span class="ready">${days}-DAY EXPERIMENT</span><h4>${esc(title)}</h4><p>Audience: <strong>${esc(aud)}</strong></p><div class="chips"><span class="chip">${esc(goalData.label)}</span><span class="chip">${esc(channels.name)}</span><span class="chip">${budget==='zero'?'Organic budget':budget==='small'?'Small budget':'Test budget'}</span></div>
+<div class="output-block"><strong>⚡ Campaign angle</strong><p style="margin:0">${esc(goalData.hook)} ${esc(insightText)}</p></div>
+<div class="output-block"><strong>🧪 Three experiments to try</strong>${experiments.map(x=>`<div class="idea"><div class="idea-top"><span>${x.n} / ${esc(x.name)}</span><span class="score">${esc(x.score)}</span></div><p>${esc(x.desc)}</p></div>`).join('')}</div>
+<div class="output-block"><strong>📊 Success metric</strong><p style="margin:0"><b>Primary KPI:</b> ${esc(goalData.kpi)}<br><b>Supporting metric:</b> ${esc(goalData.metric)}<br><b>Decision rule:</b> Compare against your current baseline; do not declare a winner from clicks alone.</p></div>
+<div class="output-block"><strong>🗓️ Execution plan</strong><ul><li><b>Days 1–${Math.max(2,Math.floor(Number(days)*.2))}:</b> Confirm the problem and write two variants.</li><li><b>Days ${Math.max(3,Math.floor(Number(days)*.2)+1)}–${Math.max(4,Math.floor(Number(days)*.75))}:</b> Run the test on ${esc(channels.name)} and collect results.</li><li><b>Final days:</b> Review KPI, interview a few users, and decide what to repeat or change.</li></ul><p>${esc(budgetText)}</p></div>
+<div class="actions"><button class="btn btn-dark" id="copyPlan">Copy plan</button><button class="btn btn-light" id="downloadPlan">Download plan</button></div>`;
+const plain=`${title}\nAudience: ${aud}\nGoal: ${goalData.label}\nChannel: ${channels.name}\nDuration: ${days} days\n\nCampaign angle:\n${goalData.hook}\n${insightText}\n\nExperiments:\n1. Message test: ${channels.one}\n2. Format test: ${channels.two}\n3. Feedback loop: ${channels.three}\n\nPrimary KPI: ${goalData.kpi}\nSupporting metric: ${goalData.metric}\n\nExecution:\nDays 1–${Math.max(2,Math.floor(Number(days)*.2))}: Validate the problem and draft variants.\nMiddle: Run the test and collect results.\nFinal days: Review the KPI and decide next steps.\n\nBudget: ${budgetText}\n\nNote: Template-based prototype; validate hypotheses with real users.`;
+$('copyPlan').onclick=async()=>{try{await navigator.clipboard.writeText(plain);showToast('Growth plan copied.')}catch(err){const ta=document.createElement('textarea');ta.value=plain;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();showToast('Growth plan copied.')}};
+$('downloadPlan').onclick=()=>{const url=URL.createObjectURL(new Blob([plain],{type:'text/plain'}));const a=document.createElement('a');a.href=url;a.download='growthspark-campaign-plan.txt';a.click();URL.revokeObjectURL(url);showToast('Plan downloaded.')};
+}
+$('form').addEventListener('submit',build);
+</script>
+</body></html>
